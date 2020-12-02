@@ -43,7 +43,20 @@ client.on('message', message => {
         });
      
     }
-
+//oddlysatisfying
+if (message.content ===`${prefix}russ`) {
+    axios.get(`https://meme-api.herokuapp.com/gimme/oddlysatisfying`)
+    .then(response => {
+      console.log(response.data.url);
+      const embed = new Discord.MessageEmbed()
+      .setImage(response.data.url)
+    message.channel.send(embed);         
+    })
+    .catch(error => {
+      console.log(error);
+    });
+ 
+}
 });
 
 client.login(process.env.BOT_TOKEN);
