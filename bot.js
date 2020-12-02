@@ -30,6 +30,19 @@ client.on('message', message => {
         });
      
     }
+    if (message.content ===`${prefix}elegin`) {
+        axios.get(`https://meme-api.herokuapp.com/gimme/vegan`)
+        .then(response => {
+          console.log(response.data.url);
+          const embed = new Discord.MessageEmbed()
+          .setImage(response.data.url)
+        message.channel.send(embed);         
+        })
+        .catch(error => {
+          console.log(error);
+        });
+     
+    }
 
 });
 
