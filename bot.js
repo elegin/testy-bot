@@ -18,7 +18,7 @@ client.on('message', message => {
     if (message.content ===`${prefix}meme`) {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
         // const command = args.shift().toLowerCase();
-        axios.get(`https://meme-api.herokuapp.com/gimme/${args[1]}`)
+        axios.get(`https://meme-api.herokuapp.com/gimme/dankmemes`)
         .then(response => {
           console.log(response.data.url);
           const embed = new Discord.MessageEmbed()
