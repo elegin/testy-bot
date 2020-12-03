@@ -10,11 +10,6 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-    if (message.content ===`${prefix}ping`) {
-        message.channel.send('Pong!!!!!!!!!!!');
-        return;
-    }
     
     if (message.content ===`${prefix}meme`) {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -46,21 +41,20 @@ client.on('message', message => {
         });
      
     }
-//oddlysatisfying
-if (message.content ===`${prefix}russ`) {
-    axios.get(`https://meme-api.herokuapp.com/gimme/oddlysatisfying`)
-    .then(response => {
-      console.log(response.data.url);
-      const embed = new Discord.MessageEmbed()
-      .setImage(response.data.url)
-    message.channel.send(embed);
-    return;         
-    })
-    .catch(error => {
-      console.log(error);
-    });
- 
-}
+    if (message.content ===`${prefix}russ`) {
+        axios.get(`https://meme-api.herokuapp.com/gimme/oddlysatisfying`)
+        .then(response => {
+          console.log(response.data.url);
+          const embed = new Discord.MessageEmbed()
+          .setImage(response.data.url)
+        message.channel.send(embed);
+        return;         
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    
+    }
 
   axios.get(`https://meme-api.herokuapp.com/gimme/reactiongifs`)
   .then(response => {
@@ -68,7 +62,6 @@ if (message.content ===`${prefix}russ`) {
     const embed = new Discord.MessageEmbed()
     .setImage(response.data.url)
   message.channel.send(embed);
-  return;         
   })
   .catch(error => {
     console.log(error);
