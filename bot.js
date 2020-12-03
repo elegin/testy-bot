@@ -42,36 +42,6 @@ client.on('message', message => {
       });
       
     }
-    
-    // if (cmds.includes(message.content)) {
-    //     axios.get(`https://meme-api.herokuapp.com/gimme/vegan`)
-    //     .then(response => {
-    //       console.log(response.data.url);
-    //       const embed = new Discord.MessageEmbed()
-    //       .setImage(response.data.url)
-    //     message.channel.send(embed);  
-    //     return;       
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-     
-    // }
-    // if (cmds.includes(message.content) {
-    //     axios.get(`https://meme-api.herokuapp.com/gimme/oddlysatisfying`)
-    //     .then(response => {
-    //       console.log(response.data.url);
-    //       const embed = new Discord.MessageEmbed()
-    //       .setImage(response.data.url)
-    //     message.channel.send(embed);
-    //     return;         
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    
-    // }
-
 
 });
 
