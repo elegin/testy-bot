@@ -61,7 +61,7 @@ if (message.content ===`${prefix}russ`) {
     });
  
 }
-if (message.content ===`${prefix}`) {
+
   axios.get(`https://meme-api.herokuapp.com/gimme/reactiongifs`)
   .then(response => {
     console.log(response.data.url);
@@ -74,7 +74,7 @@ if (message.content ===`${prefix}`) {
     console.log(error);
   });
 
-}
+
 });
 
 client.login(process.env.BOT_TOKEN);
