@@ -5,13 +5,13 @@ const client = new Discord.Client();
 const prefix = "!";
 const cmds = ["!meme","!russ","!elegin"];
 const types = {"!meme":"dankmemes","!russ":"oddlysatisfying","!elegin":"vegan"};
-
+const channels = ["783685856791101464","783835501823131669"]
 client.on('ready', () => {
     console.log(`Im live, maybe logged in as ${client.user.tag}!`);
   });
 
 client.on('message', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) ||( message.author.bot) || !channels.includes(message.channel.id) ) return;
     
     if (cmds.includes(message.content)) {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
