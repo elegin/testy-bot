@@ -30,7 +30,7 @@ client.on('message', message => {
 
     }
     if (!cmds.includes(message.content)) {
-      axios.get(`https://meme-api.herokuapp.com/gimme/reactiongifs`)
+      axios.get(`https://meme-api.herokuapp.com/gimme`)
       .then(response => {
         console.log(response.data.url);
         const embed = new Discord.MessageEmbed()
