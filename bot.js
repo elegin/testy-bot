@@ -13,6 +13,7 @@ client.on('message', message => {
 
     if (message.content ===`${prefix}ping`) {
         message.channel.send('Pong!!!!!!!!!!!');
+        return;
     }
     
     if (message.content ===`${prefix}meme`) {
@@ -23,12 +24,13 @@ client.on('message', message => {
           console.log(response.data.url);
           const embed = new Discord.MessageEmbed()
           .setImage(response.data.url)
-        message.channel.send(embed);         
+        message.channel.send(embed);
+        return;
         })
         .catch(error => {
           console.log(error);
         });
-     
+
     }
     if (message.content ===`${prefix}elegin`) {
         axios.get(`https://meme-api.herokuapp.com/gimme/vegan`)
@@ -36,7 +38,8 @@ client.on('message', message => {
           console.log(response.data.url);
           const embed = new Discord.MessageEmbed()
           .setImage(response.data.url)
-        message.channel.send(embed);         
+        message.channel.send(embed);  
+        return;       
         })
         .catch(error => {
           console.log(error);
@@ -50,12 +53,27 @@ if (message.content ===`${prefix}russ`) {
       console.log(response.data.url);
       const embed = new Discord.MessageEmbed()
       .setImage(response.data.url)
-    message.channel.send(embed);         
+    message.channel.send(embed);
+    return;         
     })
     .catch(error => {
       console.log(error);
     });
  
+}
+if (message.content ===`${prefix}`) {
+  axios.get(`https://meme-api.herokuapp.com/gimme/reactiongifs`)
+  .then(response => {
+    console.log(response.data.url);
+    const embed = new Discord.MessageEmbed()
+    .setImage(response.data.url)
+  message.channel.send(embed);
+  return;         
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
 }
 });
 
