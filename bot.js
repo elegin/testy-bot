@@ -3,8 +3,8 @@ const axios = require('axios');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "!";
-const cmds = ["!meme","!russ","!elegin"];
-const types = {"!meme":"dankmemes","!russ":"oddlysatisfying","!elegin":"vegan"};
+const cmds = ["!meme","!russ","!elegin","!doge"];
+const types = {"!meme":"dankmemes","!russ":"oddlysatisfying","!elegin":"vegan","!doge":"dogecoin"};
 const channels = ["783685856791101464","783835501823131669"]
 client.on('ready', () => {
     console.log(`Im live, maybe logged in as ${client.user.tag}!`);
