@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const prefix = "!";
 const cmds = ["!meme","!russ","!elegin","!doge"];
 const types = {"!meme":"dankmemes","!russ":"oddlysatisfying","!elegin":"vegan","!doge":"dogecoin"};
-const channels = ["783685856791101464","783835501823131669"]
+const channels = ["783685856791101464","282925401158844416"]
 client.on('ready', () => {
     console.log(`Im live, maybe logged in as ${client.user.tag}!`);
   });
